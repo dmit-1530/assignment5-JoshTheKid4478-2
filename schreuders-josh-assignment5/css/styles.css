@@ -1,0 +1,173 @@
+body {
+    font-family: "PT Sans" ,sans-serif;
+    background: linear-gradient(90deg, #46A098 0%, #54A654 100%);
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+ 
+header {
+    background-color: #9846A0;
+    /* not going to change color because needs to be added to "a" */
+    padding: 1rem;
+}
+
+header a {
+    color: #fff;
+    font-size: 1.125rem;
+    border-top: .0625rem solid #CECBCB;
+    border-bottom: .0625rem solid #CECBCB;
+    text-decoration: none;
+    /* allows the clickable area to take up the full width and height of the li */
+    display: block;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
+.menu a:hover,
+.menu a:active {
+    background-color: #9846A0;
+}
+
+.toggle-btn {
+    background: #9846A0;
+    border: none;
+    outline: none;
+}
+
+.toggle-btn:hover {
+    cursor: pointer;
+}
+
+.menu li {
+    /* the extra space from the additional line height, makes this a larger area and vertically centers the text */
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+header nav {
+    /* style this for how it will look overlapped the main content */
+    /* this element does not have a parent container that is positioned relative, therefore it's positioned in relationship to the browser screen */
+    position: absolute;
+    top: 5.5rem;
+    left: 0;
+    width: 100vw;
+    height: 32rem;
+    background-color: #9846A0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.show-nav {
+    max-height: 100vh;
+}
+
+/* ************************* section ****************** */
+
+section {
+    padding: 3.125rem;
+}
+
+section p {
+    color: #fff;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+}
+
+section h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.thumbnail {
+    margin: 0 0.5rem;
+    position: relative;
+}
+
+span {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    border-radius: .3125rem;
+}
+
+.btn {
+    background-color: #9846A0;
+    padding: 0.75rem 1.5rem;
+    color: #FFF;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* Media Query */
+
+@media (min-width: 48.75rem) {
+    .inner-container {
+        max-width: unset;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+
+    .toggle-btn {
+        display: none;
+    }
+
+    section h1 {
+        max-width: 30ch;
+    }
+
+    section p {
+        max-width: 55ch;
+    }
+
+    header {
+        margin-bottom: 4rem;
+    }
+
+    header nav {
+        padding: 0 1rem;
+        position: absolute;
+        /* return nav to html from position absolute*/
+        width: auto;
+        max-height: 5rem;
+        overflow: visible;
+    }
+
+    header a {
+        border: none;
+    }
+
+    .menu,
+    header .inner-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+
+    .menu a:hover,
+    .menu a:active {
+        background-color: #A258A9;
+        border-radius: 0.3125rem;
+    }
+}
+
+@media (min-width: 120rem) {
+    header nav {
+        padding: 0 1rem;
+        position: static;
+        width: auto;
+        max-height: 5rem;
+    }
+}
